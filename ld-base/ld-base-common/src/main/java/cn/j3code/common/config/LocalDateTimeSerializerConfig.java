@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
  * @author J3（about：https://j3code.cn）
  * @package cn.j3code.common.config
  * @createTime 2022/11/26 - 21:52
- * @description
+ * @description 时间格式序列化统一
  */
 @Configuration
 public class LocalDateTimeSerializerConfig {

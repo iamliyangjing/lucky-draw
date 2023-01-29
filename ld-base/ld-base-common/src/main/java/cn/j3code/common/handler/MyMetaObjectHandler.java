@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author J3（about：https://j3code.cn）
  * @package cn.j3code.common.handler
  * @createTime 2022/11/26 - 21:50
- * @description
+ * @description mybatisplus 自动填充
  */
 @Slf4j
 @Component

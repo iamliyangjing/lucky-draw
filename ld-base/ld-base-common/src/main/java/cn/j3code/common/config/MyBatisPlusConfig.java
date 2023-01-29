@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @description
  */
 @Configuration
-public class MyBatisPlusConfig {
+public class  MyBatisPlusConfig {
 
     // 最新版
     @Bean
