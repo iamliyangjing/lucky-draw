@@ -2,6 +2,7 @@ package cn.j3code.luckyclient.dto.query;
 
 import com.alibaba.cola.dto.Command;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
  * @description
  */
 @Data
+@Getter
 public class UserUpdateCmd extends Command {
 
     @NotNull(message = "id不为空")
@@ -29,6 +31,7 @@ public class UserUpdateCmd extends Command {
     @NotNull(message = "姓名不为空")
     private String name;
 
+    private String password;
     /**
      * 电话
      */

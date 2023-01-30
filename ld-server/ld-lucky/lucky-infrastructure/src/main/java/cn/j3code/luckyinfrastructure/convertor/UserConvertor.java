@@ -38,6 +38,8 @@ public class UserConvertor {
         userEntity.setId(userDB.getId());
         userEntity.setUsername(new UserName(userDB.getUsername()));
 
+        userEntity.setPassword(new PassWord(new PassWord.EncryptionPassWord(userDB.getPassword())));
+
         userEntity.setName(userDB.getName());
         userEntity.setPhone(userDB.getPhone());
         userEntity.setCreateTime(userDB.getCreateTime());

@@ -2,6 +2,7 @@ package cn.j3code.luckydomain.user;
 
 import cn.hutool.crypto.digest.MD5;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author J3（about：https://j3code.cn）
@@ -10,19 +11,28 @@ import lombok.Getter;
  * @description
  */
 @Getter
+@Setter
 public class PassWord {
 
     private EncryptionPassWord encryptionPassWord;
+    public PassWord(){
 
-    public PassWord(String password) {
+    }
+
+    public PassWord(EncryptionPassWord encryptionPassWord) {
+        this.encryptionPassWord = encryptionPassWord;
+    }
+
+    public PassWord(String password){
         this.encryptionPassWord = new EncryptionPassWord(getEncryptionPassWord(password));
     }
 
-    private String getEncryptionPassWord(String password) {
+    public static String getEncryptionPassWord(String password) {
         return MD5.create().digestHex(password);
     }
 
     @Getter
+    @Setter
     public static class EncryptionPassWord {
 
         private String password;
