@@ -1,5 +1,6 @@
 package cn.j3code.luckydomain.activity;
 
+import cn.j3code.config.exception.LdCodeException;
 import cn.j3code.config.exception.LdException;
 import lombok.Getter;
 
@@ -32,7 +33,8 @@ public class ActivityTime {
         }
 
         if (startTime.isAfter(endTime)) {
-            throw new LdException("活动时间非法！");
+            //throw new ldException("活动时间非法！");
+            throw new LdCodeException(5050, "活动时间非法！");
         }
 
         this.startTime = startTime;

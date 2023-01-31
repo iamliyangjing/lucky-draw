@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
  * @program: luck-draw
  * @description:
  * @author: lyj
- * @create: 2023-01-31 15:49
+ * @create: 2023-01-31 16:27
  **/
-@TableName(value ="bld_activity")
+@TableName(value ="ld_activity_rule")
 @Data
-public class ActivityDB implements Serializable {
+public class ActivityRuleDB implements Serializable {
     /**
      *
      */
@@ -22,25 +22,14 @@ public class ActivityDB implements Serializable {
     private Long id;
 
     /**
-     * 活动名称
+     * 活动id
      */
-    private String activityName;
+    private Long activityId;
 
     /**
-     * 开始时间
+     * 规则id
      */
-    private LocalDateTime startTime;
-
-    /**
-     * 结束时间
-     */
-    private LocalDateTime endTime;
-
-    /**
-     * 描述
-     */
-    @TableField("`describe`")
-    private String describe;
+    private Long ruleId;
 
     /**
      *

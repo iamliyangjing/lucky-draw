@@ -29,3 +29,4 @@ public class ActivityListByParamQueryExe {
         return page.convert(ActivityAssembler::toActivityVO);
     }
 }
+
