@@ -1,7 +1,7 @@
 package cn.j3code.luckyapp.service;
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.j3code.config.exception.ldException;
+import cn.j3code.config.exception.LdException;
 import cn.j3code.config.util.JwtUtil;
 import cn.j3code.luckyapp.user.command.UserRegisterCmdExe;
 import cn.j3code.luckyapp.user.command.UserUpdateCmdExe;
@@ -61,7 +61,7 @@ public class UserServiceImpl implements IUserService {
         query.setId(id);
         IPage<UserVO> iPage =  userListByParamQueryExe.excute(query);
         if (CollectionUtil.isEmpty(iPage.getRecords())){
-            throw new ldException("该用户不存在");
+            throw new LdException("该用户不存在");
         }
         return iPage.getRecords().get(0);
     }

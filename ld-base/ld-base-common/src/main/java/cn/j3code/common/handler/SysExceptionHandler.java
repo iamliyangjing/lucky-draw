@@ -1,6 +1,6 @@
 package cn.j3code.common.handler;
 
-import cn.j3code.config.exception.ldException;
+import cn.j3code.config.exception.LdException;
 import cn.j3code.config.vo.FailInfo;
 import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import lombok.extern.slf4j.Slf4j;
@@ -50,7 +50,7 @@ public class SysExceptionHandler {
         return failInfo;
     }
 
-    @ExceptionHandler(value = ldException.class)
+    @ExceptionHandler(value = LdException.class)
     public FailInfo sysException(Exception ex) {
         log.error("Exception_info:{}", ex.getMessage());
         log.error("Exception_info:", ex);

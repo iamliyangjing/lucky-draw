@@ -27,6 +27,11 @@ public class PassWord {
         this.encryptionPassWord = new EncryptionPassWord(getEncryptionPassWord(password));
     }
 
+    /**
+     * 加密
+     * @param password
+     * @return
+     */
     public static String getEncryptionPassWord(String password) {
         return MD5.create().digestHex(password);
     }
