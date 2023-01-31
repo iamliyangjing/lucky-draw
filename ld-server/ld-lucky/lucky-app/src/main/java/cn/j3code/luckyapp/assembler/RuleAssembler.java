@@ -49,8 +49,6 @@ public class RuleAssembler {
         ruleEntity.setRuleName(cmd.getRuleName());
         ruleEntity.setMaxJoinNumber(new MinNumber(cmd.getMaxJoinNumber()));
         ruleEntity.setMaxWinningNumber(new MinNumber(cmd.getMaxWinningNumber()));
-        ruleEntity.setCreateTime(LocalDateTime.now());
-        ruleEntity.setCreator(SecurityUtil.getName());
         ruleEntity.setUpdateTime(LocalDateTime.now());
         ruleEntity.setUpdater(SecurityUtil.getName());
 
