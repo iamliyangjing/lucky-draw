@@ -36,7 +36,7 @@ public class AwardVO {
     private String awardName;
 
     /**
-     * 概率
+     * 概率（1.001）
      */
     private Double probability;
 
