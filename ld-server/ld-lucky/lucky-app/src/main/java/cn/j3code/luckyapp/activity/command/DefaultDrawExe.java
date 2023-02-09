@@ -38,20 +38,12 @@ public class DefaultDrawExe extends BaseDrawExe{
     protected void addAcceptPrize(Long id, AwardEntity awardEntity) {
 
     }
-    @Override
-    protected DrawResultVO getDefaultDrawResultVO(List<AwardVO> awardVOList) {
-        DrawResultVO result = new DrawResultVO();
-        for (AwardVO awardVO : awardVOList) {
-            if ("0".equals(awardVO.getPrizeId())) {
-                result = getDrawResultVO(AwardAssembler.toAwardEntity(awardVO));
-                break;
-            }
-        }
-        return result;
-    }
+
 
     @Override
     protected int deductionAwardNumber(Long awardId, Integer number) {
+
+        // 这里需要优化
         return awardGateway.deductionAwardNumber(awardId, number);
     }
 
@@ -92,6 +84,7 @@ public class DefaultDrawExe extends BaseDrawExe{
 
 
     }
+
     @Override
     protected void checkActivityTime(ActivityVO activityVO) {
         ActivityEntity activityEntity = new ActivityEntity();
