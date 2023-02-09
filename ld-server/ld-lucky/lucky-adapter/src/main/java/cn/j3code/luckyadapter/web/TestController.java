@@ -5,6 +5,7 @@ import cn.j3code.config.enums.LdExceptionEnum;
 import cn.j3code.config.exception.LdCodeException;
 import cn.j3code.config.util.AssertUtil;
 import cn.j3code.luckyapp.activity.command.RedisDeductionAwardNumberDrawExe;
+import cn.j3code.luckyapp.listener.AwardInventoryToRedisApplicationListener;
 import cn.j3code.luckyapp.listener.event.ActivityCreateEvent;
 import cn.j3code.luckyclient.dto.data.ActivityConfigVO;
 import cn.j3code.luckyclient.dto.data.ActivityVO;
@@ -73,6 +74,16 @@ public class TestController {
         activityConfigVO.setAwardVOList(awardVOList);
         // 发送活动创建事件
         applicationEventMulticaster.multicastEvent(new ActivityCreateEvent("", activityConfigVO));
+    }
+
+    @GetMapping("/invokeStockDeduction")
+    public Integer invokeStockDeduction(){
+       return drawExe.invokeStockDeductionLua(AwardInventoryToRedisApplicationListener.getKey(1L,100L));
+    }
+
+    @GetMapping("/invokeStockRollback")
+    public Integer invokeStockRollback(){
+        return drawExe.invokeStockRollbackLua(AwardInventoryToRedisApplicationListener.getKey(1L,100L));
     }
 
 }

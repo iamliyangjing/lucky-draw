@@ -21,6 +21,7 @@ public class FileLoad {
         String val = "";
         try {
             // val = IoUtil.read(new FileInputStream(fileName),"UTF-8");
+            // new FileInputStream(new file)
             val = IoUtil.read(new FileInputStream(FileUtil.file(fileName)), CharEncoding.UTF_8);
         }catch (Exception e){
             // 错误处理

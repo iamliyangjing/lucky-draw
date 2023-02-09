@@ -3,7 +3,8 @@ ld:
   mysql-port: 3306
   nacos-port: 8848
   redis-port: 6379
-#nacos
+  mq-host1: 127.0.0.1
+  mq-port1: 9876
 nacos:
   #dev
   namespace: 79622650-2ad0-4651-945e-82929157836f
@@ -13,3 +14,6 @@ DB_NAME: bld
 DB_USERNAME: root
 DB_PASSWORD: qqq111
 REDIS_PASSWORD: ENC(dt7eo1i+3pVrhVI+cJicCa0AsP1mhq9wbwRJ7vOAt+TQtbLZr1Sq+oSLHmmLosz3)
+
+MQ_NAME_SERVER: ${ld.mq-host1}:${ld.mq-port1}
+MQ_GROUP: lucky_draw
