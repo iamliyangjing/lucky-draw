@@ -1,4 +1,4 @@
-package cn.j3code.luckyapp.mq.product;
+package cn.j3code.luckyapp.mq.producer;
 
 import cn.hutool.core.util.IdUtil;
 import cn.j3code.config.dto.ActivityDrawMessage;
@@ -36,6 +36,26 @@ public class ActivityDrawMessageProducer {
                 .build();
 
         SendResult sendResult = rocketMQTemplate.syncSend("activity-draw-topic", message);
+
+        if (SendStatus.SEND_OK.equals(sendResult.getSendStatus())) {
+            log.info("消息发送成功，业务ID：{}.uuid:{}",
+                    activityDrawMessage.getId(), activityDrawMessage.getUuid());
+            return Boolean.TRUE;
+        }
+        log.info("消息发送失败！");
+        return Boolean.FALSE;
+    }
+
+    public Boolean sendTest(ActivityDrawContext context) {
+        final var activityDrawMessage = new ActivityDrawMessage()
+                .setUuid(IdUtil.simpleUUID())
+                .setBody(JSON.toJSONString(context));
+
+        Message<ActivityDrawMessage> message = MessageBuilder
+                .withPayload(activityDrawMessage)
+                .build();
+
+        SendResult sendResult = rocketMQTemplate.syncSend("activity-draw-sendTest-topic", message);
 
         if (SendStatus.SEND_OK.equals(sendResult.getSendStatus())) {
             log.info("消息发送成功，业务ID：{}.uuid:{}",

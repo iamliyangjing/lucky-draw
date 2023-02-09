@@ -44,8 +44,7 @@ public abstract class BaseDrawExe {
         context.setIsWinTheLottery(context.getAwardEntity().isPrize());
         if (Boolean.FALSE.equals(context.getIsWinTheLottery())) {
             // 插入未中奖记录
-            addRecord(context);
-            return getDrawResultVO(context.getAwardEntity());
+            return addRecordAndGetDrawResultVO(context);
         }
 
         Boolean drawBefore = Boolean.TRUE;
@@ -63,13 +62,12 @@ public abstract class BaseDrawExe {
             context.setAwardVO(getNotAward(context.getActivityConfigVO().getAwardVOList()));
             context.setAwardEntity(AwardAssembler.toAwardEntity(context.getAwardVO()));
             context.setIsWinTheLottery(Boolean.FALSE);
-            addRecord(context);
-            return getDrawResultVO(context.getAwardEntity());
+            return addRecordAndGetDrawResultVO(context);
         }
-
         // 返回结果
         return getDrawResultVO(context.getAwardEntity());
     }
+    protected abstract DrawResultVO addRecordAndGetDrawResultVO(ActivityDrawContext context);
 
     protected abstract Boolean drawBefore(ActivityDrawContext context);
 

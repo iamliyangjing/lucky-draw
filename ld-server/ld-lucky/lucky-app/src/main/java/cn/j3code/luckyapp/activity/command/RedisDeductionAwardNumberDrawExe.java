@@ -6,7 +6,7 @@ import cn.j3code.config.util.AssertUtil;
 import cn.j3code.config.util.FileLoad;
 import cn.j3code.luckyapp.context.ActivityDrawContext;
 import cn.j3code.luckyapp.listener.AwardInventoryToRedisApplicationListener;
-import cn.j3code.luckyapp.mq.product.ActivityDrawMessageProducer;
+import cn.j3code.luckyapp.mq.producer.ActivityDrawMessageProducer;
 import cn.j3code.luckyclient.dto.query.RecordListByParamQuery;
 import cn.j3code.luckydomain.gateway.AwardGateway;
 import cn.j3code.luckydomain.gateway.PrizeGateway;
