@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @AllArgsConstructor
-public class ActivityDrawMessageProduct {
+public class ActivityDrawMessageProducer {
 
     private final RocketMQTemplate rocketMQTemplate;
 

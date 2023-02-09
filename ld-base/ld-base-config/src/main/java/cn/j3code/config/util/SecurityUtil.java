@@ -38,7 +38,6 @@ public class SecurityUtil {
 
         return Objects.isNull(userId) ? 0L : Long.parseLong(userId.toString());
     }
-
     public static String get(String key) {
         Object value = userThreadLocal.get().get(key);
 
