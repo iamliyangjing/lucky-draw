@@ -15,4 +15,8 @@ public @interface DistributedLock {
 
     String key() default "distributedLock";
 
+    long expiredTime() default 30L;
+
+    int maxToRenewNum() default 30;
+
 }

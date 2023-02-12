@@ -1,4 +1,4 @@
-package cn.j3code.luckyapp.mq.consume;
+package cn.j3code.luckyadapter.mq.consume;
 
 import cn.j3code.config.dto.ActivityDrawMessage;
 import cn.j3code.config.util.AssertUtil;

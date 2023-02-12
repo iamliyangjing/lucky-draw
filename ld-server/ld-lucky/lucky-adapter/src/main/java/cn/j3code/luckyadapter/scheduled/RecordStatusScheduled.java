@@ -1,5 +1,6 @@
-package cn.j3code.luckyapp.scheduled;
+package cn.j3code.luckyadapter.scheduled;
 
+import cn.j3code.common.annotation.DistributedLock;
 import cn.j3code.luckyapp.activity.command.RedisDeductionAwardNumberDrawExe;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,5 +33,16 @@ public class RecordStatusScheduled {
         drawExe.ScheduledExecuteDeductionOfInventoryAndUpdateRecordStatus();
     }
 
+    @DistributedLock(key = "test")
+    @Scheduled(cron = "0/5 * * * * ?")
+    public void test(){
+
+        try {
+            System.out.println("业务处理中");
+            Thread.sleep(1 * 60 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

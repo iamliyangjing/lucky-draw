@@ -8,7 +8,7 @@ import cn.j3code.luckyapp.activity.command.RedisDeductionAwardNumberDrawExe;
 import cn.j3code.luckyapp.context.ActivityDrawContext;
 import cn.j3code.luckyapp.listener.AwardInventoryToRedisApplicationListener;
 import cn.j3code.luckyapp.listener.event.ActivityCreateEvent;
-import cn.j3code.luckyapp.mq.producer.ActivityDrawMessageProducer;
+import cn.j3code.luckyadapter.mq.producer.ActivityDrawMessageProducer;
 import cn.j3code.luckyclient.dto.data.ActivityConfigVO;
 import cn.j3code.luckyclient.dto.data.ActivityVO;
 import cn.j3code.luckyclient.dto.data.AwardVO;

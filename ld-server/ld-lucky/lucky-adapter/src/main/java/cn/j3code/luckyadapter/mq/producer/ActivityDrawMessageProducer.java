@@ -1,4 +1,4 @@
-package cn.j3code.luckyapp.mq.producer;
+package cn.j3code.luckyadapter.mq.producer;
 
 import cn.hutool.core.util.IdUtil;
 import cn.j3code.config.dto.ActivityDrawMessage;
