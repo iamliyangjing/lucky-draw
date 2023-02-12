@@ -48,6 +48,12 @@ public class RecordDB implements Serializable {
      */
     private Integer state;
 
+    @TableField(exist = false)
+    private String awardName;
+
+    @TableField(exist = false)
+    private String prizeName;
+
     /**
      *
      */

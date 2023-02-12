@@ -31,6 +31,13 @@ public class RecordEntity {
 
     private String activityName;
 
+
+    private String awardName;
+
+    private String prizeName;
+
+
+
     /**
      * 奖项id
      */
