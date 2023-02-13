@@ -38,7 +38,6 @@ public class RecordGatewayImpl implements RecordGateway {
     @Override
     public IPage<RecordEntity> page(RecordListByParamQuery query) {
         IPage<RecordDB> page = recordMapper.page(new Page<RecordDB>(query.getPageIndex(), query.getPageSize()), query);
-
         return page.convert(RecordConvertor::toEntity);
     }
 

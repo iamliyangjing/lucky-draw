@@ -36,7 +36,7 @@ public class RecordEntity {
 
     private String prizeName;
 
-
+    private Integer prizeType;
 
     /**
      * 奖项id

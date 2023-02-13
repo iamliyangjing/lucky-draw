@@ -43,6 +43,7 @@ public class RecordConvertor {
         recordEntity.setCreator(recordDB.getCreator());
         recordEntity.setUpdateTime(recordDB.getUpdateTime());
         recordEntity.setUpdater(recordDB.getUpdater());
+        recordEntity.setPrizeType(recordDB.getPrizeType());
 
         return recordEntity;
     }
