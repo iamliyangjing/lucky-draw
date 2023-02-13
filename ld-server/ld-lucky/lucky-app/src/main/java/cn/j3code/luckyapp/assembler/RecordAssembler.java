@@ -47,6 +47,8 @@ public class RecordAssembler {
         recordVO.setCreator(entity.getCreator());
         recordVO.setUpdateTime(entity.getUpdateTime());
         recordVO.setUpdater(entity.getUpdater());
+        recordVO.setPrizeType(entity.getPrizeType());
+
 
         return recordVO;
     }
