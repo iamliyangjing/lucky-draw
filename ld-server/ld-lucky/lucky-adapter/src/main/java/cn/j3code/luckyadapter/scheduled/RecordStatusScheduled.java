@@ -33,16 +33,16 @@ public class RecordStatusScheduled {
         drawExe.ScheduledExecuteDeductionOfInventoryAndUpdateRecordStatus();
     }
 
-    @DistributedLock(key = "test")
-    @Scheduled(cron = "0/5 * * * * ?")
-    public void test(){
-
-        try {
-            System.out.println("业务处理中");
-            Thread.sleep(1 * 60 * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+//    @DistributedLock(key = "test")
+//    @Scheduled(cron = "0/5 * * * * ?")
+//    public void test(){
+//
+//        try {
+//            System.out.println("业务处理中");
+//            Thread.sleep(1 * 60 * 1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 }

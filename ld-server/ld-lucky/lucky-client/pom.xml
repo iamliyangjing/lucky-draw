@@ -16,6 +16,11 @@
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-dto</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.j3code</groupId>
+            <artifactId>ld-base</artifactId>
+            <version>LD.2022.11.26</version>
+        </dependency>
     </dependencies>
 
 </project>

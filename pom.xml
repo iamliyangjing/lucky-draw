@@ -54,6 +54,7 @@
         <module>ld-base</module>
         <module>ld-gateway</module>
         <module>ld-server</module>
+        <module>ld-server/ld-wallet</module>
     </modules>
 
     <dependencies>

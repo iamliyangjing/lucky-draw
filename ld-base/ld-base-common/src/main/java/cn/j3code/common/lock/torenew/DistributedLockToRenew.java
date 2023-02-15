@@ -43,7 +43,7 @@ public class DistributedLockToRenew {
                 // 错误处理
                 log.error("执行扫描Task逻辑出错：", e);
             }
-            System.out.println("我被执行了！");
+           log.info("DistributedLockToRenew 扫描需要续约的锁");
         },1,4, TimeUnit.SECONDS);
     }
 

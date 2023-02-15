@@ -4,6 +4,8 @@ import cn.j3code.luckyclient.dto.query.RecordListByParamQuery;
 import cn.j3code.luckydomain.record.RecordEntity;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
+import java.math.BigDecimal;
+
 /**
  * @program: luck-draw
  * @description:
@@ -17,5 +19,7 @@ public interface RecordGateway {
     IPage<RecordEntity> page(RecordListByParamQuery query);
 
     Boolean updateStatus(Long id, Integer status);
+
+    BigDecimal getPrizeMoneyByRecordId(Long recordId);
 
 }

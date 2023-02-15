@@ -42,4 +42,9 @@ public class RecordController {
         return recordServer.update(cmd);
     }
 
+    @GetMapping("/exchangeMoney")
+    public Boolean exchangeMoney(@RequestParam("recordId") Long recordId) {
+        return recordServer.exchangeMoney(recordId);
+    }
+
 }

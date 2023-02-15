@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 
+import java.math.BigDecimal;
+
 /**
  * @program: luck-draw
  * @description:
@@ -19,4 +21,5 @@ public interface RecordMapper extends BaseMapper<RecordDB> {
 
     Integer updateStatus(@Param("id") Long id, @Param("status") Integer status);
 
+    BigDecimal getPrizeMoneyByRecordId(@Param("recordId") Long recordId);
 }
