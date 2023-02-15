@@ -24,7 +24,8 @@ public class RecordStatusScheduled {
     /**
      * 每个5分钟执行一次
      */
-    @Scheduled(cron = "0 0/5 * * * ?")
+    @Scheduled(cron = "0/5 * * * * ?")
+    @DistributedLock
     public void deductionOfInventoryAndUpdateRecordStatus(){
         /**
          * 定时扫描用户不可见状态的中奖记录，然后对比当前时间和数据创建时间，

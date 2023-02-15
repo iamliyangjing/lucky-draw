@@ -36,6 +36,11 @@ public class RecordController {
         return recordServer.prizeType(recordId);
     }
 
+    /**
+     * 用户确认签收
+     * @param cmd
+     * @return
+     */
     @GetMapping("/updateStatusTo4")
     public Boolean updateStatusTo4(RecordUpdateStatusCmd cmd) {
         cmd.setState(4);

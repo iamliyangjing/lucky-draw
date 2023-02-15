@@ -18,6 +18,7 @@ import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @program: luck-draw
@@ -87,7 +88,6 @@ public class DistributedLockAspect {
             log.error("获取注解key失败，使用默认key");
             return defaultKey + "default-key";
         }
-
         DistributedLock annotation = method.getAnnotation(DistributedLock.class);
         String key = annotation.key();
         if (Objects.isNull(key)){

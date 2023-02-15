@@ -21,9 +21,10 @@ public class InitWalletScheduled {
     private final WalletService walletService;
 
 
-    @DistributedLock
-    @Scheduled(cron = "0 0 0/1 * * ?")
-    void initWallet(){
+    @Scheduled(cron = "* * 0/1 * * ?")
+    @DistributedLock(key = "walletInit")
+    public void initWallet(){
+        log.info("给新用户初始化钱包");
         walletService.initAllNotWalletUser();
     }
 

@@ -1,11 +1,14 @@
 package cn.j3code.luckyadapter.web;
 
 import cn.j3code.common.annotation.ResponseResult;
+import cn.j3code.config.util.SecurityUtil;
 import cn.j3code.luckyclient.api.IUserService;
 import cn.j3code.luckyclient.dto.UserRegisterCmd;
 import cn.j3code.luckyclient.dto.data.UserVO;
 import cn.j3code.luckyclient.dto.query.UserLoginQuery;
 import cn.j3code.luckyclient.dto.UserUpdateCmd;
+import cn.j3code.luckyclient.feign.WalletFeignApi;
+import cn.j3code.luckyclient.feign.vo.WalletMoney;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
@@ -24,6 +27,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final IUserService userService;
+
+    private final WalletFeignApi walletFeignApi;
 
     @PostMapping("/register")
     public UserVO register(@Validated @RequestBody UserRegisterCmd cmd) {
@@ -44,5 +49,15 @@ public class UserController {
     @PostMapping("/update")
     public UserVO update(@Validated @RequestBody UserUpdateCmd cmd) {
         return userService.update(cmd);
+    }
+
+    @GetMapping("/me")
+    public UserVO me() {
+        return userService.one(SecurityUtil.getUserId());
+    }
+
+    @GetMapping("/wallet")
+    public WalletMoney wallet() {
+        return walletFeignApi.getUserWallet(SecurityUtil.getUserId());
     }
 }

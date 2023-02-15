@@ -1,6 +1,7 @@
 package cn.j3code.ldwallet.server;
 
 import cn.j3code.ldwallet.api.feign.form.UpdateWalletForm;
+import cn.j3code.ldwallet.api.feign.vo.WalletMoney;
 import cn.j3code.ldwallet.api.feign.vo.WalletUpdateResultVO;
 import cn.j3code.ldwallet.po.Wallet;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -18,4 +19,5 @@ public interface WalletService  extends IService<Wallet> {
 
     void initAllNotWalletUser();
 
+    WalletMoney getUserWallet(Long userId);
 }

@@ -22,6 +22,7 @@ public class AwardVO {
      * 奖品名称
      */
     private Long prizeId;
+    private String prizeName;
 
     private Long activityId;
 

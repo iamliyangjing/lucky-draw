@@ -44,7 +44,7 @@ public class AwardAssembler {
         awardVO.setCreator(entity.getCreator());
         awardVO.setUpdateTime(entity.getUpdateTime());
         awardVO.setUpdater(entity.getUpdater());
-
+        awardVO.setPrizeName(entity.getPrizeName());
         return awardVO;
     }
 

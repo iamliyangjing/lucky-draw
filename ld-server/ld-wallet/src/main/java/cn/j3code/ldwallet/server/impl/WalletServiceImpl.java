@@ -2,10 +2,12 @@ package cn.j3code.ldwallet.server.impl;
 
 import cn.j3code.config.util.SecurityUtil;
 import cn.j3code.ldwallet.api.feign.form.UpdateWalletForm;
+import cn.j3code.ldwallet.api.feign.vo.WalletMoney;
 import cn.j3code.ldwallet.api.feign.vo.WalletUpdateResultVO;
 import cn.j3code.ldwallet.mapper.WalletMapper;
 import cn.j3code.ldwallet.po.Wallet;
 import cn.j3code.ldwallet.server.WalletService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -87,5 +89,17 @@ public class WalletServiceImpl extends ServiceImpl<WalletMapper, Wallet>
         List<Long> notInitUserList = getBaseMapper().notInitUserList();
 
         notInitUserList.stream().parallel().forEach(this::initWallet);
+    }
+
+    @Override
+    public WalletMoney getUserWallet(Long userId) {
+        Wallet userWallet = getBaseMapper().selectOne(new QueryWrapper<Wallet>().eq("userId", userId));
+        if (userWallet==null){
+            return null;
+        }
+        WalletMoney walletMoney = new WalletMoney();
+        walletMoney.setBalance(userWallet.getBalance());
+        walletMoney.setUserId(userId);
+        return walletMoney;
     }
 }

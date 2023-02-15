@@ -1,6 +1,7 @@
 package cn.j3code.ldwallet.api.feign;
 
 import cn.j3code.ldwallet.api.feign.form.UpdateWalletForm;
+import cn.j3code.ldwallet.api.feign.vo.WalletMoney;
 import cn.j3code.ldwallet.api.feign.vo.WalletUpdateResultVO;
 import cn.j3code.ldwallet.server.WalletService;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,17 @@ public class WalletFeign {
     @GetMapping("/initUserWallet")
     public void initUserWallet(@RequestParam("userId") Long userId) {
         walletService.initUserWallet(userId);
+    }
+
+    @GetMapping("/getUserWallet")
+    public WalletMoney getUserWallet(@RequestParam("userId") Long userId) {
+       WalletMoney walletMoney =  walletService.getUserWallet(userId);
+       return walletMoney;
+    }
+
+    @GetMapping("/initWallet")
+    public void initWallet() {
+        walletService.initAllNotWalletUser();
     }
 
 }

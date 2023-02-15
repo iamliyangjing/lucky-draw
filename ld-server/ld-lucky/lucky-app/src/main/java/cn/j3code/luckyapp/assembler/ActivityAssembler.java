@@ -57,7 +57,6 @@ public class ActivityAssembler {
         return activityEntity;
     }
 
-
     public static ActivityAddCmd toActivityAddCmd(ActivityVO activityVO) {
         ActivityAddCmd activityAddCmd = new ActivityAddCmd();
         activityAddCmd.setActivityName(activityVO.getActivityName());

@@ -2,6 +2,7 @@ package cn.j3code.luckyclient.feign;
 
 import cn.j3code.config.constant.ServerNameConstants;
 import cn.j3code.luckyclient.feign.form.UpdateWalletForm;
+import cn.j3code.luckyclient.feign.vo.WalletMoney;
 import cn.j3code.luckyclient.feign.vo.WalletUpdateResultVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,4 +24,8 @@ public interface WalletFeignApi {
 
     @GetMapping("/initUserWallet")
     void initUserWallet(@RequestParam("userId") Long userId);
+
+    @GetMapping("/getUserWallet")
+    WalletMoney getUserWallet(@RequestParam("userId") Long userId);
+
 }
